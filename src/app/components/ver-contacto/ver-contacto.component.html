@@ -1,0 +1,19 @@
+<div class="title">
+  <h1>Ver Contacto</h1>
+</div>
+
+<app-spinner *ngIf="loading"></app-spinner>
+
+<div *ngIf="contacto != null" class="container">
+  <mat-card class="card">
+    <mat-card-title>{{ contacto.name }}</mat-card-title>
+    <mat-card-content>
+      <p><strong>Apellido: </strong>{{ contacto.lastname }}</p>
+      <p><strong>Teléfono: </strong>{{ contacto.phone }}</p>
+      <p><strong>Email: </strong>{{ contacto.email }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button routerLink="/listContactos" mat-raised-button>Volver</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

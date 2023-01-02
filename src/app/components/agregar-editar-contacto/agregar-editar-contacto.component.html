@@ -1,0 +1,73 @@
+<div class="title">
+  <h1>{{ accion }} Contacto</h1>
+</div>
+
+<app-spinner *ngIf="loading"></app-spinner>
+
+<div class="container">
+  <mat-card>
+    <mat-card-subtitle> Datos del contacto </mat-card-subtitle>
+    <form [formGroup]="form" (ngSubmit)="agregarEditarContacto()">
+      <mat-grid-list cols="2" rowHeight="80px">
+        <mat-grid-tile [colspan]="1">
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input
+              type="text"
+              formControlName="nombre"
+              matInput
+              type="text"
+              autocomplete="off"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Apellido</mat-label>
+            <input
+              type="text"
+              formControlName="apellido"
+              matInput
+              autocomplete="off"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1">
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input
+              type="email"
+              formControlName="email"
+              matInput
+              placeholder="pat@example.com"
+              required
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Teléfono</mat-label>
+            <input
+              type="tel"
+              formControlName="telefono"
+              matInput
+              autocomplete="off"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2">
+          <button
+            [disabled]="form.invalid"
+            type="submit"
+            class="btnAceptar"
+            mat-raised-button
+            color="primary"
+          >
+            Aceptar
+          </button>
+          <button mat-raised-button routerLink="/listContactos">Volver</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </mat-card>
+</div>
