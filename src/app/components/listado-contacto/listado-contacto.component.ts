@@ -70,8 +70,8 @@ export class ListadoContactoComponent implements AfterViewInit {
     this._contactoService.deleteContacto(id_contact).subscribe({
       next: () => {
         this.mensajeExito();
-        this.loading = false;
         this.obtenerContactos();
+        this.loading = false;
       },
       error: (err) => {
         alert(`Hubo un error al tratar de borrar el contacto ${err.message}`);

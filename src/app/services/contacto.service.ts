@@ -23,9 +23,9 @@ export class ContactoService {
     );
   }
 
-  deleteContacto(contactoId: number): Observable<void> {
-    return this.http.delete<void>(
-      `${this.myAppUrl}${this.myApiUrl}${contactoId}`
+  deleteContacto(id_contact: number): Observable<Contacto> {
+    return this.http.delete<Contacto>(
+      `${this.myAppUrl}${this.myApiUrl}${id_contact}`
     );
   }
 
